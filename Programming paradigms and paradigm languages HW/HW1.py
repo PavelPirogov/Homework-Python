@@ -17,5 +17,5 @@ def sort_list_declarative(numbers):
     return sorted(numbers, reverse=True)
 
 numbers_list = [9, 5, 2, 7, 1, 3]
-result = sort_list_imperative(numbers_list)
+result = sort_list_declarative(numbers_list)
 print(result)
