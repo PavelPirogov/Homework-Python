@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+   Одежда
+{% endblock %}
+
+{% block content %}
+    <div class="container text-center mt-5">
+        <div class="row align-items-start">
+            <div class="col">
+                <div class="card" style="width: 18rem; padding-top: 1rem;">
+                    <img 
+                        src="/static/image/clothes.jpg"
+                        class="card-img-top"
+                        alt="Товар">
+                    <div class="card-body">
+                        <h5 class="card-title">Красивая одежда</h5>
+                        <p class="card-text">
+                            Она предполагает сочетание разных стилей одежды, 
+                            фактур, принтов и кроев.
+                        </p>
+                        <a href="/card/" class="btn btn-primary">Подбробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
