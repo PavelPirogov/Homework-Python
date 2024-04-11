@@ -1,9 +1,15 @@
 from django.urls import path
-from shop.views import get_clients, get_client, delete_client, create_client
+from shop.views import (client_products, delete_client, get_client,
+                        get_clients, index, order, product, product_form)
 
 urlpatterns = [
+    path('', index, name='index'),
     path('clients/', get_clients, name='clients'),
     path('clients/<int:pk>/', get_client, name='get_client'),
-    path('clients/create/', create_client, name='create_client'),
-    path('clients/delete/<int:pk>/', delete_client, name='delete')
+    path('clients/<int:pk>/orders/', order, name='order'),
+    path('clients/<int:pk>/orders/<int:days>/',
+         client_products, name='client_products'),
+    path('clients/delete/<int:pk>/', delete_client, name='delete'),
+    path('product/<int:pk>', product, name='product'),
+    path('product_form/', product_form, name='product_form'),
 ]
