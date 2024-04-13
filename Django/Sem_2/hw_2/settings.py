@@ -1,16 +1,18 @@
 # flake8: noqa
-
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-s31s+++uub^$^5r*2^p*i%iimif31gzyh*#_f7ch01a)_v=gg4'
-
+SECRET_KEY = os.getenv('SECRET_KEY', 'asadadsa')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
+    'HapppyEnd.pythonanywhere.com',
 ]
 
 
@@ -78,7 +80,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'UTC'
 
@@ -88,6 +90,7 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR/'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
 
